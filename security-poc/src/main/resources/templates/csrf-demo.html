@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo CSRF</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div class="login-container">
+        <h1 class="header-seguro">Ação Protegida por CSRF</h1>
+        <p>Você está (simuladamente) logado.</p>
+        <p>Como o Spring Security está ativo, o Thymeleaf irá **automaticamente** injetar um campo de token oculto neste formulário (veja o código-fonte da página!).</p>
+
+        <form th:action="@{/change-password-protegido}" method="post">
+            <label>Nova Senha Fictícia:</label>
+            <input type="password" name="newPass">
+            <br>
+            <button type="submit">Mudar Senha (Ação Segura)</button>
+        </form>
+    </div>
+</body>
+</html>

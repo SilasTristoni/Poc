@@ -3,21 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Seguro</title>
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        /* Container do Login */
+        .login-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box; /* Garante que padding não afete a largura total */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Diferenciação dos cabeçalhos */
+        .header-vulneravel {
+            color: #d93025; /* Vermelho Alerta */
+        }
+
+        .header-seguro {
+            color: #1a73e8; /* Azul Seguro */
+        }
+
+        /* Estilos do Formulário */
+        form div {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Importante para o padding não quebrar o layout */
+            font-size: 1rem;
+        }
+
+        input:focus {
+            border-color: #1a73e8;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+        }
+
+        /* Botão */
+        button {
+            width: 100%;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            background-color: #1a73e8;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 0.5rem; /* Espaço acima do botão */
+        }
+
+        button:hover {
+            background-color: #185abc;
+        }
+
+        /* Página de Resultado */
+        .resultado-container {
+            text-align: center;
+        }
+
+        .resultado-container a {
+            display: inline-block;
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #1a73e8;
+            font-weight: 500;
+        }
+
+        .resultado-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Tela de Login - SEGURO contra SQL Injection</h1>
-    <form action="/login-seguro" method="post">
-        <div>
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" style="width: 300px;">
-        </div>
-        <br>
-        <div>
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password">
-        </div>
-        <br>
-        <button type="submit">Entrar</button>
-    </form>
+    <div class="login-container">
+        <h1 class="header-seguro">Login SEGURO<br>(Spring Data JPA)</h1>
+        
+        <form action="/login-seguro" method="post">
+            <div>
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
 </body>
 </html>
