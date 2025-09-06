@@ -112,7 +112,7 @@
     <div class="login-container">
         <h1 class="header-vulneravel">Login VULNERÁVEL<br>(SQL Injection)</h1>
         
-        <form action="/login-vulneravel" method="post">
+        <form th:action="@{/login-vulneravel}" method="post">
             <div>
                 <label for="username">Usuário:</label>
                 <input type="text" id="username" name="username">

@@ -112,7 +112,7 @@
     <div class="login-container">
         <h1 class="header-seguro">Login SEGURO<br>(Spring Data JPA)</h1>
         
-        <form action="/login-seguro" method="post">
+        <form th:action="@{/login-seguro}" method="post">
             <div>
                 <label for="username">Usuário:</label>
                 <input type="text" id="username" name="username">
