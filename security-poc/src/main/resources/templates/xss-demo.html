@@ -45,7 +45,7 @@
 
     <div class="column">
         <h1>Adicionar Comentário</h1>
-        <form action="/add-comment" method="post">
+        <form th:action="@{/add-comment}" method="post">
             <textarea name="comment" placeholder="Tente inserir: <script>alert('XSS!')</script>"></textarea>
             <br><br>
             <button type="submit">Enviar</button>
